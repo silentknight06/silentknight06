@@ -1,0 +1,36 @@
+---------------------------4--SORT AN ARRAY WITHOUT USING ANY SORTING ALGORITHM----------------------------------------------------------------------
+
+#include<bits/stdc++.h>
+using namespace std;
+void sortthearrya(int a[], int n){
+     int i = 0;
+        int one = 0, two = n-1;
+        while(i<=two){
+            if(a[i]==0){
+                int temp = a[i];
+                a[i] = a[one];
+                a[one] = temp;
+                one++;
+                i++;
+            }else if(a[i]==2){
+                int temp  = a[i];
+                a[i] = a[two];
+                a[two] = temp;
+                two--;
+                
+            }else{
+                i++;
+            }
+            
+        }
+}
+int main(){
+    int n = 6;
+    int a[n] = {1, 0, 2, 0, 1, 2};
+    sortthearrya(a, n);
+    for(int i = 0; i<n; i++){
+        cout<<a[i]<<endl;
+    }
+
+    return 0;
+}
