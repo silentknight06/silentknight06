@@ -1,0 +1,36 @@
+------------------------9 Minimize the Heights---------------------------------------------
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int minimize(int arr[], int n, int k){
+    sort(arr, arr+n);
+    int diff = arr[n-1]-arr[0];
+    int mi = arr[0];
+    int ma = arr[n-1];
+    for(int i =1; i<n; i++){
+if((arr[i]-k)<0){
+    continue;
+}
+// this  is in sorted order so..when we have to find min value then increase by k from left side and decrese by k from right side
+mi = min(arr[0]+k, arr[i]-k);
+ma = max(arr[i-1]+k, arr[n-1]-k);
+diff = min(diff, ma-mi);
+    }
+    return diff;
+}
+
+
+int main()
+{
+     int n = 5;
+     int k = 3;
+    int arr[n] = {3, 9, 12, 16, 20};
+    
+   cout<< minimize(arr, n, k)<<endl;
+ 
+   
+}
+-------------------------------------------------------------------------------------------------------------------
