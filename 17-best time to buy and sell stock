@@ -1,0 +1,25 @@
+----------------------------17 best time to bbbuy sel and and stock---------
+
+#include<bits/stdc++.h>
+using namespace std;
+   int maxprofit(int arr[], int n){
+    int buy = arr[0];
+    int maxprofit= 0;
+    for(int i = 1; i<n; i++){
+        if(buy>arr[i]){
+            buy = arr[i];
+        }
+        int profit = arr[i]-buy;
+        if(profit>maxprofit){
+            maxprofit = profit;
+        }
+    }
+    return maxprofit;
+   }
+int main(){
+    int n = 6;
+    int arr[n] = {7, 1, 5, 3, 6, 4};
+    cout<<maxprofit(arr, n);
+
+    return 0;
+}
