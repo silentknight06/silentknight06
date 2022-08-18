@@ -1,0 +1,26 @@
+-----------------------------------------21 21-subarray whos sum is equal to zzero----------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n = 5;
+    int arr[n] = {4,2, -3, 1, 6};
+    unordered_map<int, int> m;
+    int sum;
+    int f;
+     for(int  i = 0; i<n; i++){
+    sum += arr[i];
+    if(sum==0 || arr[i]==0|| m[sum]){
+        f = 1;
+        break;
+    }else{
+        m[sum] = 1;
+    }
+     }
+     if(f==1){
+        cout<<"true"<<endl;
+     }else{
+        cout<<"false"<<endl;
+     }
+    return 0;
+}
