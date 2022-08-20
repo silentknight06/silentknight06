@@ -1,0 +1,29 @@
+---------------------------------------------------------25---n divideed by k-----------------------------------------------------
+#include<bits/stdc++.h>
+using namespace std;
+int apper(int arr[], int n, int k){
+ int x = n/k;
+ unordered_map<int, int> m;
+ for(int i = 0; i<n; i++){
+  m[arr[i]]++;
+ }
+ for(auto i : m){
+  if(i.second>x){
+    cout<<i.first<<endl;
+  }
+ }
+}
+ 
+
+
+int main(){
+  int n  = 8;
+  int k = 4;
+  int arr[n] = {3, 1, 2, 2, 1, 2, 3, 3} ;
+  apper(arr, n, k);
+  // for(int i = 0; i<n; i++){
+  //   cout<<apper[i]<<endl;
+  // }
+  return 0;
+}
+------------------------------------------------------------------------------2nd methord----------------------------------------------------
